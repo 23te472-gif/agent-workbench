@@ -1,0 +1,32 @@
+/* Keep the existing layout and palette; tighten overflow and dialog chrome. */
+.auto-return{margin:12px 0 20px}
+.auto-sidebar>.auto-kicker{margin-bottom:14px}
+.auto-shell .auto-modal{display:flex;flex-direction:column;overflow:hidden}
+.auto-modal-head,.auto-modal-actions{flex-shrink:0}
+.auto-modal-body{min-height:0;overflow:auto;overscroll-behavior:contain;padding:0 4px 4px;scrollbar-gutter:stable}
+.auto-modal-actions{margin-top:16px;padding-top:14px}
+.memory-panel>header{position:sticky;top:-25px;z-index:2;padding:10px 0 14px;background:var(--theme-surface,#fcfdfc);border-bottom:1px solid var(--theme-border,#dce7df);margin-bottom:14px}
+.memory-panel>header>div{flex:1;min-width:0}
+.memory-panel>header>button{flex-shrink:0}
+.memory-panel>footer{position:sticky;bottom:-25px;z-index:2;background:var(--theme-surface,#fcfdfc);padding:14px 0 8px;border-top:1px solid var(--theme-border,#dce7df)}
+.chat-delete-dialog{max-height:calc(100vh - 40px);overflow:auto;overscroll-behavior:contain}
+.chat-delete-dialog>div{flex-wrap:wrap}
+.memory-fields{flex-wrap:wrap}
+.persona-editor-entry{flex-wrap:wrap}
+.auto-header>.auto-button{flex-shrink:0}
+.auto-role-top>span{min-width:0;overflow-wrap:anywhere}
+.chat-more-controls[open]>div{left:auto;right:0;max-width:calc(100vw - 60px);flex-wrap:wrap}
+.chat-empty{min-height:100%;padding:12px}
+@media(max-height:760px),(max-width:950px){
+ .chat-empty>span{display:none}
+ .chat-empty h2{margin:6px 0;font-size:15px}
+}
+@media(max-width:950px){
+ .auto-roles{grid-template-columns:1fr}
+ .auto-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .chat-conversation-head{align-items:flex-start;flex-wrap:wrap}
+ .chat-conversation-head>div{max-width:100%}
+ .chat-header-actions{gap:8px;justify-content:flex-start}
+ .chat-compose-bottom>small{display:none}
+ .auto-panel-heading{flex-wrap:wrap}
+}

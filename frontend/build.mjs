@@ -1,0 +1,10 @@
+import {build} from 'esbuild';
+import {mkdir,copyFile,rm} from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.dirname(fileURLToPath(import.meta.url));
+await rm(path.join(root,'dist'),{recursive:true,force:true});
+await mkdir(path.join(root,'dist/assets'),{recursive:true});
+await build({absWorkingDir:root,entryPoints:['src/main.jsx'],bundle:true,outfile:'dist/assets/app.js',format:'iife',target:'edge110',jsx:'automatic',minify:true,legalComments:'eof',define:{'process.env.NODE_ENV':'"production"'}});
+await copyFile(path.join(root,'src/index.html'),path.join(root,'dist/index.html'));
+console.log('Agent workbench frontend built.');

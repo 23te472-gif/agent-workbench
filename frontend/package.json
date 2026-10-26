@@ -1,0 +1,23 @@
+{
+  "name": "agent-workbench-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Agent workbench desktop frontend",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test --test-isolation=none \"test/*.test.mjs\""
+  },
+  "dependencies": {
+    "lucide-react": "^1.61.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  },
+  "engines": {
+    "node": ">=22.8"
+  },
+  "license": "MIT"
+}
